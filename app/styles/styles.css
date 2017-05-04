@@ -1,0 +1,26 @@
+.display-3 {
+  text-align: center;
+}
+
+.lead {
+  text-align: center;
+}
+
+#stuff {
+  text-align: center;
+}
+
+.jumbotron {
+  margin-bottom: 0px;
+  background-image: url(clouds.jpg);
+}
+
+img {
+  max-width:40%;
+  max-height:40;
+  
+}
+
+/*.navbar {
+  background-color: #0074D9;
+}*/
