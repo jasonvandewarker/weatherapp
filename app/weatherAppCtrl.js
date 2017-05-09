@@ -19,6 +19,8 @@
         .weatherSearch(searchTerm)
         .then(function(data) {
           vm.results = data;
+          console.log(vm.results);
+
         });
     }
   }

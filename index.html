@@ -29,16 +29,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <a class="navbar-brand" href="#">Favorites</a>
+        <a class="navbar-brand" href="#">History</a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="#">San Diego, CA</a></li>
-          <li><a href="#">Washington, DC</a></li>
-          <li><a href="#">Tokyo, Japan</a></li>
-          <li><a href="#">Xi'an, China</a></li>
-          <li><a href="#">Brussels, Belgium</a></li>
-          <li><a href="#">Marrakesh, Morocco</a></li>
+          <li><a href="#">Stuff Stuff</a></li>
+          <li ng-bind="vm.results.name"><a href="#"></a></li>
+          <li><a href="#">More Stuff</a></li>
+
         </ul>
         <form class="navbar-form navbar-right">
           <div class="form-group">
@@ -59,18 +57,18 @@
           <!-- Default panel contents -->
           <div class="panel-heading">City Information</div>
           <div class="panel-body">
-            <h3 class="text-center"></h3>
+            <h3 class="text-center">{{vm.results.name}}</h3>
           </div>
           <!-- List group -->
           <ul class="list-group">
-            <li class="list-group-item">Forecast: </li>
-            <li class="list-group-item">Current Temperature: </li>
-            <li class="list-group-item">High: </li>
-            <li class="list-group-item">Low: </li>
-            <li class="list-group-item">Humidity: </li>
+            <li class="list-group-item">Current Temperature: {{vm.results.main.temp}}</li>
+            <li class="list-group-item">High: {{vm.results.main.temp_max}}</li>
+            <li class="list-group-item">Low: {{vm.results.main.temp_min}}</li>
+            <li class="list-group-item">Humidity: {{vm.results.main.humidity}} </li>
+            <li class="list-group-item">Wind: {{vm.results.wind.speed}} </li>
+
           </ul>
         </div>
-        <pre>{{vm | json}}</pre>
       </div>
       <!-- end of Column 1 -->
       <div class="col-md-6">
@@ -78,28 +76,11 @@
           <!-- Default panel contents -->
           <div class="panel-heading">Recent Searches</div>
           <!-- Table -->
-          <table class="table">
-            <tr>
-              <th>Location</th>
-              <th>Info</th>
-            </tr>
-            <tr>
-              <td>Place</td>
-              <td>Weather and stuff</td>
-            </tr>
-            <tr>
-              <td>Place</td>
-              <td>Weather and stuff</td>
-            </tr>
-            <tr>
-              <td>Place</td>
-              <td>Weather and stuff</td>
-            </tr>
-            <tr>
-              <td>Place</td>
-              <td>Weather and stuff</td>
-            </tr>
-          </table>
+          <div class="panel-body">
+            <ul class="list-group">
+              <li class="list-group-item" ng-bind="vm.results.name">{{vm.results.name}}{{Date.now() | date:'yyyy-MM-dd'}}</li>
+
+          </div>
         </div>
       </div>
       <!-- end of Column 2 -->

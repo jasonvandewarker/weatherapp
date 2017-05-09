@@ -14,3 +14,7 @@
   margin-bottom: 0px;
   background-image: url(clouds.jpg);
 }
+
+h1 {
+    text-shadow: 2px 2px 4px #000000;
+}
