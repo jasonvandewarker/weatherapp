@@ -15,17 +15,24 @@
     vm.today = new Date();
 
     ///////////////////////
-
+// This function calls the data from the weatherfactory.
     function cityFinder(searchTerm) {
       weatherFactory
         .weatherSearch(searchTerm)
         .then(function(data) {
           vm.results = data;
           console.log(vm.results);
+
+      // Takes the name of the city searched for and pushes it into an
+      // array that can be used for generating the buttons and populating
+      // the search history table.
+
           if (vm.cityArray.indexOf(vm.results.name) == -1) {
             vm.cityArray.push(vm.results.name);
           }
-
+          // This block is connected to angular toastr and sends a display box
+          // saying whether or not the data has been recieved properly.
+          
           if (data.cod == 200) {
             toastr.success("Yay for weather!");
           } else {

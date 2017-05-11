@@ -23,6 +23,10 @@
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
+
+<!-- This navbar displays the city name searched and is clickable. Clicking the
+city name will display the results for that city. -->
+
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -59,6 +63,7 @@
           </div>
           <!-- List group -->
           <ul class="list-group">
+<!-- This is a panel that displays the info returned from the weather api -->
             <li class="list-group-item">Current Temperature: {{vm.results.main.temp}}</li>
             <li class="list-group-item">High: {{vm.results.main.temp_max}}</li>
             <li class="list-group-item">Low: {{vm.results.main.temp_min}}</li>
@@ -74,6 +79,8 @@
           <!-- Default panel contents -->
           <div class="panel-heading">Recent Searches</div>
           <!-- Table -->
+<!-- This panel displays past searches and at what time and date they
+were searched for  -->
           <div class="panel-body">
             <ul class="list-group">
               <li class="list-group-item" ng-repeat="data in vm.cityArray">
